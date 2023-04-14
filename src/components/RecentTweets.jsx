@@ -10,7 +10,6 @@ function RecentTweets() {
       setMedia(body.data.includes.media.map((med) => med.preview_image_url));
     });
   }, []);
-  console.log(tweets.map((tweet) => tweet.id));
   return (
     <div className="tweet_wrap">
       <h1>Tweets:</h1>
@@ -21,7 +20,7 @@ function RecentTweets() {
         </div>
       ))}
       <div className="tweet_img_wrap">
-        <img src={media}></img>
+        <img src={media} alt="media" />
       </div>
     </div>
   );

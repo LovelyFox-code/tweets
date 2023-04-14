@@ -6,7 +6,6 @@ function TimeLineTweets() {
   useEffect(() => {
     fetch(`http://localhost:3001/twitter-feed`).then(async (response) => {
       const body = await response.json();
-      console.log(body);
       setTweets(body.dataFeed.data);
       setMedia(
         body.dataFeed.includes.media.map((med) => med.preview_image_url)
@@ -24,7 +23,7 @@ function TimeLineTweets() {
         </div>
       ))}
       <div className="tweet_img_wrap">
-        <img src={media}></img>
+        <img src={media} alt="media" />
       </div>
     </div>
   );
